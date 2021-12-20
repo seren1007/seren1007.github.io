@@ -26,10 +26,10 @@ function initRotSquare(){
 	gl.useProgram( program );
 
 	var vertices = [
-		 0,  1,  0,
-		-1,  0,  0,
-		 1,  0,  0,
-		 0, -1,  0
+		 0,  0.5,  0,
+		-0.5,  -0.5,  0,
+		 0.5,  -0.5,  0,
+		
 	];
 
 	var bufferId = gl.createBuffer();
@@ -71,7 +71,7 @@ function renderSquare(){
 
 	gl.uniform1f( thetaLoc, theta );
 
-	gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );
+	gl.drawArrays( gl.TRIANGLE_STRIP, 0, 3 );
 
 	// update and render
 	setTimeout( function (){ requestAnimFrame( renderSquare ); }, delay );

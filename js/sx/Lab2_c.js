@@ -36,6 +36,7 @@ window.onload = function initTriangles(){
 	var w = vec3.create();
 	vec3.set( w, 1, -1, 0 );
 	// var w = vec3.fromValues( vertices[6], vertices[7], vertices[8] );
+
 	divideTriangle( u, v, w, numTimesToSubdivide );
 
 	// configure webgl
@@ -90,7 +91,7 @@ function divideTriangle( a, b, c, count ){
 		divideTriangle( a, ab, ca, count );
 		divideTriangle( b, bc, ab, count );
 		divideTriangle( c, ca, bc, count );
-		divideTriangle( ab, bc, ca,count );
+		divideTriangle( ab, bc, ca, count );
 	}
 }
 

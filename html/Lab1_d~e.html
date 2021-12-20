@@ -3,16 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <title>Lab1_d~e</title>
-  </head>
 
-  <body onload="main()">
-    <canvas id="webgl" width="600px" height="600px">
-    Please use a browser that supports "canvas"
-    </canvas>
+<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 a_Color;
+			varying vec4 v_Color;
+		void main() {
+				gl_Position = vPosition;
+				v_Color = a_Color;
+		}
+		</script>
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 v_Color;
+			void main(){
+				gl_FragColor = v_Color;
+			}
+		</script>
+		<script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+		<script type="text/javascript" src="../js/common/initShaders.js"></script>
+		<script type="text/javascript" src="../js/common/gl-matrix-min.js"></script>
+		<!-- 绘制三角形的JS代码 -->
+		<script type="text/javascript" src="../js/sx/color.js"></script>
+	  </head>	
+  <body onload="init()">
+    <canvas id="webgl" width="512px" height="512px"></canvas>
 
-    <script src="js/common1/webgl-utils.js"></script>
-    <script src="js/common1/webgl-debug.js"></script>
-    <script src="js/common1/cuon-utils.js"></script>
-    <script src="js/sx/color.js"></script>
   </body>
 </html>
